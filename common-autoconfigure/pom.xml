@@ -78,7 +78,7 @@
                             <goal>sign</goal>
                         </goals>
                         <configuration>
-                            <gpgExecutable>gpg</gpgExecutable> <!-- full path optional -->
+<!--                            <gpgExecutable>gpg</gpgExecutable> &lt;!&ndash; full path optional &ndash;&gt;-->
                             <useAgent>false</useAgent>
                             <gpgArguments>
                                 <arg>--pinentry-mode</arg>
@@ -89,8 +89,21 @@
                     </execution>
                 </executions>
             </plugin>
+            <plugin>
+                <groupId>org.sonatype.central</groupId>
+                <artifactId>central-publishing-maven-plugin</artifactId>
+            </plugin>
 
         </plugins>
+        <pluginManagement>
+            <plugins>
+                <plugin>
+                    <groupId>org.sonatype.central</groupId>
+                    <artifactId>central-publishing-maven-plugin</artifactId>
+                    <version>0.4.0</version>
+                </plugin>
+            </plugins>
+        </pluginManagement>
     </build>
 
 
